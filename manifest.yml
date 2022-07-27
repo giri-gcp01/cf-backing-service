@@ -1,0 +1,18 @@
+---
+applications:
+  - name: backing-service-demo
+    memory: 1024M
+    instances: 1
+    buildpacks:
+      - paketo-buildpacks/java
+    routes:
+      - route: backing-service.apps.cf.gcplearnng.tech 
+    path: ./target/backing-service-demo-1.0.jar
+    env:
+     spring.profiles.active: cloud
+     spring.jpa.show-sql: true
+     spring.jpa.properties.hibernate.format_sql: true
+     spring.jpa.hibernate.naming.physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    services:
+      - mysql-db
+      - weather-service

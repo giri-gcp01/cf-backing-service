@@ -1,0 +1,5 @@
+{
+	"url":"jdbc:mysql://SG-cf-sql-6472-mysql-master.servers.mongodirector.com:3306/spring-music",
+	"username":"test",
+	"password":"Spring-Music1"
+}
